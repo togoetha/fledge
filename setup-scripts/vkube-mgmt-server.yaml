@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vkube-mgmt-service
+  namespace: default
+  labels:
+    run: vkubemgmt
+spec:
+  hostNetwork: true
+  containers:
+    - name: vkube-mgmt-service
+      image: togoetha/vkube-manager-service
+      imagePullPolicy: Always
+      resources:
+      command: ["./vkubelet-server"]
+      args: ["10.2.0.67", "6443", "defaultPod.json"]
+      ports:
+        - name: http
+          containerPort: 8180
+  nodeSelector:
+    vpodmaster: "true"
+

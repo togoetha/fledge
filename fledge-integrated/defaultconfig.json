@@ -1,0 +1,10 @@
+{
+    "runtime":"containerd",
+    "deviceName":"Dummy",
+    "deviceIP":"127.0.0.1",
+    "servicePort":"8100",
+    "kubeletPort":"8101",
+    "vkubeServiceURL":"",
+    "ignoreKubeProxy":"true",
+    "heartbeatTime": "60"
+}
